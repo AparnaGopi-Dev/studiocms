@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+
+}
+
+
+body {
+
+    font-family: var(--font-body);
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: var(--font-heading);
+
+}
+/* Scroll Reveal Animation */
+
+.reveal {
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+
+}
+
+
+.reveal.active {
+
+    opacity: 1;
+    transform: translateY(0);
+
+}
+/* Hero Entrance Animations */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.fade {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: .2s;
+}
+
+.delay-2 {
+    animation-delay: .4s;
+}
+
+.delay-3 {
+    animation-delay: .6s;
+}
+
+.delay-4 {
+    animation-delay: .8s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Layout */
+
+.container-custom {
+    @apply max-w-7xl mx-auto px-6;
+}
+
+/* Typography */
+
+.section-label {
+    @apply uppercase tracking-[0.3em] text-sm text-gray-500;
+}
+
+.section-title {
+    @apply text-4xl md:text-5xl font-semibold;
+}
+
+/* Buttons */
+
+.btn-primary {
+    @apply px-10 py-4 bg-white text-black rounded-full font-medium transition duration-300;
+}
+
+.btn-primary:hover {
+    @apply bg-gray-200;
+}
+
+.btn-outline {
+    @apply px-10 py-4 border border-white rounded-full transition duration-300;
+}
+
+.btn-outline:hover {
+    @apply bg-white text-black;
+}
+/* Hero Scroll Indicator Animation */
+
+@keyframes scroll-line {
+
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(200%);
+    }
+
+}
+
+.animate-scroll-line {
+    animation: scroll-line 2s infinite ease-in-out;
+}
